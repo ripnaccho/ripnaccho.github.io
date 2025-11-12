@@ -9,11 +9,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --primary: #fcbad3;     /* rosa pastel principal */
-  --secondary: #ffb6c1;   /* rosa claro suave */
-  --accent: #f8c8dc;      /* tono medio */
-  --dark: #4a3f43;        /* marrón grisáceo suave */
-  --light: #fff5f8;       /* fondo claro rosado */
+  --primary: #f9c5d1;     /* rosa pastel suave */
+  --secondary: #fbcfe8;   /* rosa claro con matiz lavanda */
+  --accent: #ffd6e8;      /* acento rosado pálido */
+  --dark: #5e4b56;        /* gris rosado oscuro */
+  --light: #fff7fa;       /* fondo muy claro rosado */
 }
 
 html { scroll-behavior: smooth; }
@@ -30,11 +30,11 @@ body {
 header {
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(15px);
-  box-shadow: 0 2px 20px rgba(255,182,193,0.3);
+  box-shadow: 0 2px 20px rgba(249,197,209,0.3);
   position: fixed; top: 0; width: 100%;
   z-index: 1000; transition: all 0.3s ease;
 }
-header.scrolled { padding: .5rem 0; box-shadow: 0 4px 25px rgba(255,182,193,0.4); }
+header.scrolled { padding: .5rem 0; box-shadow: 0 4px 25px rgba(249,197,209,0.4); }
 
 nav {
   display: flex; justify-content: space-between; align-items: center;
@@ -51,7 +51,7 @@ nav {
 
 nav ul { list-style: none; display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; }
 nav a {
-  text-decoration: none; color: #775e67; font-weight: 600; position: relative;
+  text-decoration: none; color: #80626f; font-weight: 600; position: relative;
   transition: color .3s; padding: .5rem 0;
 }
 nav a::before {
@@ -66,12 +66,12 @@ nav a:hover::before { width: 100%; }
 .cta-nav {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white !important; padding: .7rem 1.5rem !important;
-  border-radius: 50px; box-shadow: 0 4px 15px rgba(252,186,211,0.5);
+  border-radius: 50px; box-shadow: 0 4px 15px rgba(249,197,209,0.5);
   transition: all .3s;
 }
 .cta-nav:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(252,186,211,0.6);
+  box-shadow: 0 6px 25px rgba(249,197,209,0.6);
 }
 
 /* ===== Hero ===== */
@@ -104,7 +104,7 @@ nav a:hover::before { width: 100%; }
   letter-spacing: -0.02em;
 }
 .highlight {
-  background: linear-gradient(135deg, #ffb6c1, #f497b6);
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 .hero p {
@@ -123,11 +123,11 @@ nav a:hover::before { width: 100%; }
 }
 .btn-primary {
   background: white; color: var(--primary);
-  box-shadow: 0 10px 30px rgba(255,192,203,0.3);
+  box-shadow: 0 10px 30px rgba(249,197,209,0.3);
 }
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(255,192,203,0.5);
+  box-shadow: 0 15px 40px rgba(249,197,209,0.5);
 }
 .btn-secondary {
   background: rgba(255,255,255,0.25);
@@ -138,7 +138,7 @@ nav a:hover::before { width: 100%; }
 /* ===== Stats ===== */
 .stats {
   background: white; padding: 4rem 5%;
-  box-shadow: 0 -10px 40px rgba(255,182,193,0.1);
+  box-shadow: 0 -10px 40px rgba(249,197,209,0.1);
 }
 .stats-container {
   max-width: 1400px; margin: auto;
@@ -150,7 +150,7 @@ nav a:hover::before { width: 100%; }
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.stat-item p { color: #8d6f79; font-weight: 600; }
+.stat-item p { color: #947a86; font-weight: 600; }
 
 /* ===== Section Header ===== */
 .section-header { text-align: center; max-width: 800px; margin: 0 auto 4rem; }
@@ -158,12 +158,12 @@ nav a:hover::before { width: 100%; }
   font-size: 3rem; font-weight: 900; color: var(--dark);
   margin-bottom: 1rem;
 }
-.section-header p { font-size: 1.2rem; color: #8d6f79; line-height: 1.8; }
+.section-header p { font-size: 1.2rem; color: #947a86; line-height: 1.8; }
 
 /* ===== Features ===== */
 .features-section {
   padding: 6rem 5%;
-  background: linear-gradient(180deg, #fff5f8, #ffe5ec);
+  background: linear-gradient(180deg, #fff7fa, #ffe6ef);
 }
 .features-grid {
   max-width: 1400px; margin: auto;
@@ -172,13 +172,13 @@ nav a:hover::before { width: 100%; }
 }
 .feature-card {
   background: white; padding: 3rem 2.5rem; border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(255,182,193,0.2);
-  border: 1px solid rgba(255,192,203,0.3);
+  box-shadow: 0 10px 40px rgba(249,197,209,0.2);
+  border: 1px solid rgba(249,197,209,0.3);
   transition: all .3s;
 }
 .feature-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(255,182,193,0.4);
+  box-shadow: 0 20px 60px rgba(249,197,209,0.4);
   border-color: var(--primary);
 }
 .feature-icon {
@@ -188,7 +188,7 @@ nav a:hover::before { width: 100%; }
   font-size: 2rem; margin-bottom: 1.5rem; color: white;
 }
 .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--dark); }
-.feature-card p { color: #8d6f79; }
+.feature-card p { color: #947a86; }
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
@@ -205,7 +205,6 @@ nav a:hover::before { width: 100%; }
   .section-header h2 { font-size: 2.2rem; }
   .pricing-cards, .footer-content { grid-template-columns: 1fr; }
 }
-
   </style>
 </head>
 <body>
@@ -233,231 +232,32 @@ nav a:hover::before { width: 100%; }
         </div>
       </div>
       <div class="vending-container">
-                <svg class="vending-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="machineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#EE5A6F;stop-opacity:1" />
-                        </linearGradient>
-                        <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#4A5568;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#2D3748;stop-opacity:1" />
-                        </linearGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    
-                    <ellipse cx="150" cy="390" rx="130" ry="10" fill="rgba(0,0,0,0.2)"/>
-                    
-                    <rect x="40" y="40" width="220" height="330" rx="20" fill="url(#machineGrad)" stroke="#C53030" stroke-width="4"/>
-                    
-                    <rect x="60" y="60" width="180" height="110" rx="10" fill="url(#screenGrad)" stroke="#1A202C" stroke-width="3"/>
-                    
-                    <text x="150" y="105" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#4FD1C5" text-anchor="middle" filter="url(#glow)">KINKY</text>
-                    <text x="150" y="135" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#4FD1C5" text-anchor="middle" filter="url(#glow)">NASTY</text>
-                    
-                    <rect x="65" y="65" width="70" height="35" rx="8" fill="rgba(255,255,255,0.15)"/>
-                    
-                    <rect x="60" y="185" width="180" height="140" rx="10" fill="rgba(0,0,0,0.4)" stroke="#000" stroke-width="2"/>
-                    
-                    <g>
-                        <rect x="70" y="195" width="35" height="28" rx="4" fill="#F6AD55"/>
-                        <rect x="112" y="195" width="35" height="28" rx="4" fill="#4299E1"/>
-                        <rect x="154" y="195" width="35" height="28" rx="4" fill="#9F7AEA"/>
-                        <rect x="196" y="195" width="35" height="28" rx="4" fill="#FC8181"/>
-                        
-                        <rect x="70" y="232" width="35" height="28" rx="4" fill="#48BB78"/>
-                        <rect x="112" y="232" width="35" height="28" rx="4" fill="#ED8936"/>
-                        <rect x="154" y="232" width="35" height="28" rx="4" fill="#38B2AC"/>
-                        <rect x="196" y="232" width="35" height="28" rx="4" fill="#ECC94B"/>
-                        
-                        <rect x="70" y="269" width="35" height="28" rx="4" fill="#4A5568"/>
-                        <rect x="112" y="269" width="35" height="28" rx="4" fill="#E53E3E"/>
-                        <rect x="154" y="269" width="35" height="28" rx="4" fill="#3182CE"/>
-                        <rect x="196" y="269" width="35" height="28" rx="4" fill="#D69E2E"/>
-                    </g>
-                    
-                    <rect x="75" y="335" width="150" height="28" rx="8" fill="#2D3748" stroke="#000" stroke-width="2"/>
-                    <rect x="80" y="340" width="140" height="18" rx="5" fill="#1A202C"/>
-                    <path d="M 85 348 L 95 343 L 95 353 Z" fill="#4FD1C5"/>
-                    
-                    <g>
-                        <circle cx="95" cy="375" r="10" fill="#48BB78" stroke="#2F855A" stroke-width="2.5"/>
-                        <circle cx="125" cy="375" r="10" fill="#4299E1" stroke="#2C5282" stroke-width="2.5"/>
-                        <circle cx="155" cy="375" r="10" fill="#FC8181" stroke="#C53030" stroke-width="2.5"/>
-                        <circle cx="185" cy="375" r="10" fill="#F6AD55" stroke="#C05621" stroke-width="2.5"/>
-                        <circle cx="215" cy="375" r="10" fill="#9F7AEA" stroke="#6B46C1" stroke-width="2.5"/>
-                    </g>
-                    
-                    <rect x="50" y="35" width="12" height="6" rx="3" fill="#CBD5E0"/>
-                    <rect x="238" y="35" width="12" height="6" rx="3" fill="#CBD5E0"/>
-                    
-                    <circle cx="150" y="355" r="15" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
-                    <text x="150" y="361" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFF" text-anchor="middle">KN</text>
-                </svg>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <h3>500+</h3>
-                <p>Clientes Satisfechos</p>
-            </div>
-            <div class="stat-item">
-                <h3>24/7</h3>
-                <p>Operación Continua</p>
-            </div>
-            <div class="stat-item">
-                <h3>99.9%</h3>
-                <p>Tiempo de Actividad</p>
-            </div>
-            <div class="stat-item">
-                <h3>50+</h3>
-                <p>Países Atendidos</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="features-section">
-        <div class="section-header">
-            <h2>¿Por Qué Elegir Kinky Nasty?</h2>
-            <p>Tecnología de vanguardia diseñada para maximizar tus ventas y simplificar tu operación</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>Automatización Total</h3>
-                <p>Sistema inteligente que opera 24/7 sin intervención humana, maximizando tus ingresos mientras duermes.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Analíticas Avanzadas</h3>
-                <p>Monitorea el rendimiento en tiempo real con informes detallados para optimizar tus ventas y stock.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Seguridad de Primera</h3>
-                <p>Protege tu inversión con sistemas de seguridad avanzados y monitoreo remoto las 24 horas.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚙️</div>
-                <h3>Fácil Mantenimiento</h3>
-                <p>Diseño modular que facilita el mantenimiento y las actualizaciones, minimizando el tiempo de inactividad.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌐</div>
-                <h3>Conectividad Global</h3>
-                <p>Controla y gestiona tus máquinas desde cualquier lugar del mundo con nuestra plataforma en la nube.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💡</div>
-                <h3>Innovación Continua</h3>
-                <p>Nos mantenemos a la vanguardia de la tecnología para ofrecerte siempre las mejores soluciones del mercado.</p>
-            </div>
-        </div>
-    </section>
-    <section id="pricing" class="pricing-section">
-        <div class="pricing-container">
-            <div class="section-header">
-                <h2>Planes de Precios</h2>
-                <p>Elige el plan que mejor se adapte a tus necesidades y comienza a transformar tu negocio hoy mismo.</p>
-            </div>
-            <div class="pricing-cards">
-                <div class="price-card">
-                    <div class="price-badge">Básico</div>
-                    <h3>Plan Starter</h3>
-                    <div class="price">$200.000 <span>/ máquina</span></div>
-                    <ul class="price-features">
-                        <li><div class="check">✓</div> Operación 24/7</li>
-                        <li><div class="check">✓</div> Soporte Básico</li>
-                        <li><div class="check">✓</div> Actualizaciones de Software</li>
-                        <li><div class="check">✓</div> Acceso a Analíticas Básicas</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Comprar Ahora</a>
-                </div>
-                <div class="price-card featured">
-                        <div class="price-badge">Popular</div>
-                        <h3>Plan Pro</h3>
-                        <div class="price">$350.000 <span>/ máquina</span></div>
-                        <ul class="price-features">
-                            <li><div class="check">✓</div> Todo en el Plan Starter</li>
-                            <li><div class="check">✓</div> Soporte Prioritario 24/7</li>
-                            <li><div class="check">✓</div> Analíticas Avanzadas</li>
-                            <li><div class="check">✓</div> Mantenimiento Preventivo</li>
-                            <li><div class="check">✓</div> Integración con Sistemas Externos</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-primary">Comprar Ahora</a>
-                </div>
-                <div class="price-card">
-                    <div class="price-badge">Premium</div>
-                    <h3>Plan Elite</h3>
-                    <div class="price">$500.000 <span>/ máquina</span></div>
-                    <ul class="price-features">
-                        <li><div class="check">✓</div> Todo en el Plan Pro</li>
-                        <li><div class="check">✓</div> Soporte Dedicado 24/7</li>
-                        <li><div class="check">✓</div> Personalización Completa</li>
-                        <li><div class="check">✓</div> Consultoría de Ventas</li>
-                        <li><div class="check">✓</div> Actualizaciones Exclusivas</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Comprar Ahora</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="cta-section">
-        <div class="cta-content">
-            <h2>¿Listo para Transformar tu Negocio?</h2>
-            <p>Contacta con nuestro equipo de ventas hoy mismo y descubre cómo Kinky Nasty puede llevar tu negocio al siguiente nivel.</p>
-            <a href="mailto":>
-                <div class="btn btn-primary">📧 Contáctanos</div
-                    </a>
-        </div>
-    </section>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>⚡ Kinky Nasty</h3>
-                <p>Innovando en ventas automáticas con tecnología de punta para maximizar tus ingresos.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Enlaces Rápidos</h4>
-                <ul>
-                    <li><a href="#hero">Inicio</a></li>
-                    <li><a href="#features">Características</a></li>
-                    <li><a href="#pricing">Precios</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Soporte</h4>
-                <ul>
-                    <li><a href="#">Centro de Ayuda</a></li>
-                    <li><a href="#">Términos de Servicio</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Síguenos</h4>
-                <ul>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2024 Kinky Nasty. Todos los derechos reservados.
-        </div>
-    </footer>
+        <svg class="vending-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="machineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#f9c5d1;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#fbcfe8;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#e8d5dd;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#c3b4ba;stop-opacity:1" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <ellipse cx="150" cy="390" rx="130" ry="10" fill="rgba(0,0,0,0.2)"/>
+          <rect x="40" y="40" width="220" height="330" rx="20" fill="url(#machineGrad)" stroke="#f2a6bb" stroke-width="4"/>
+          <rect x="60" y="60" width="180" height="110" rx="10" fill="url(#screenGrad)" stroke="#a49399" stroke-width="3"/>
+          <text x="150" y="105" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff0f5" text-anchor="middle" filter="url(#glow)">KINKY</text>
+          <text x="150" y="135" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff0f5" text-anchor="middle" filter="url(#glow)">NASTY</text>
+        </svg>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
-
-
-
