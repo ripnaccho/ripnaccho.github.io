@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago - Kinky Nasty</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #fcbad3;
+      --secondary: #ffb6c1;
+      --dark: #4a3f43;
+      --light: #fff5f8;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .payment-container {
+      background: white;
+      border-radius: 30px;
+      padding: 3rem;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      color: var(--dark);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: #8d6f79;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .qr-container {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      border: 3px solid var(--primary);
+    }
+
+    .qr-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .instructions {
+      background: #fff5f8;
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .instructions h3 {
+      color: var(--dark);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .instructions ol {
+      margin-left: 1.5rem;
+      color: #8d6f79;
+      line-height: 1.8;
+    }
+
+    .instructions li {
+      margin-bottom: 0.5rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(252,186,211,0.3);
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(252,186,211,0.5);
+    }
+
+    .mercadopago-logo {
+      width: 150px;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .payment-container {
+        padding: 2rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <div class="logo">⚡ Kinky Nasty</div>
+    <h1>Completar Pago</h1>
+    <p class="subtitle">Escanea el código QR con la app de Mercado Pago</p>
+
+    <div class="qr-container">
+      <img src="https://i.imgur.com/9YXqZKp.png" alt="QR Mercado Pago">
+    </div>
+
+    <div class="instructions">
+      <h3>📱 Instrucciones de Pago</h3>
+      <ol>
+        <li>Abre la aplicación de <strong>Mercado Pago</strong></li>
+        <li>Toca en <strong>"Escanear QR"</strong></li>
+        <li>Apunta tu cámara al código QR</li>
+        <li>Confirma el pago en la app</li>
+        <li>¡Listo! Recibirás confirmación por email</li>
+      </ol>
+    </div>
+
+    <a href="index.html" class="back-button">← Volver al Inicio</a>
+  </div>
+</body>
+</html>
