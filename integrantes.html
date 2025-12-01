@@ -475,47 +475,7 @@ footer {
       </div>
     </div>
   </section>
-
-  <section id="add-member" class="add-member-section">
-    <div class="add-member-container">
-      <h2>Añadir Nuevo Miembro</h2>
-      <form id="addMemberForm">
-        <div class="form-group">
-          <label for="memberName">Nombre Completo</label>
-          <input type="text" id="memberName" name="memberName" required placeholder="Ej: Juan Pérez">
-        </div>
-
-        <div class="form-group">
-          <label for="memberRole">Cargo</label>
-          <input type="text" id="memberRole" name="memberRole" required placeholder="Ej: Director de Ventas">
-        </div>
-
-        <div class="form-group">
-          <label for="memberIcon">Icono/Emoji</label>
-          <select id="memberIcon" name="memberIcon" required>
-            <option value="👨‍💼">👨‍💼 Ejecutivo</option>
-            <option value="👩‍💼">👩‍💼 Ejecutiva</option>
-            <option value="👨‍💻">👨‍💻 Desarrollador</option>
-            <option value="👩‍💻">👩‍💻 Desarrolladora</option>
-            <option value="👨‍🔧">👨‍🔧 Técnico</option>
-            <option value="👩‍🔧">👩‍🔧 Técnica</option>
-            <option value="👨‍🎨">👨‍🎨 Diseñador</option>
-            <option value="👩‍🎨">👩‍🎨 Diseñadora</option>
-            <option value="👨‍🏫">👨‍🏫 Consultor</option>
-            <option value="👩‍🏫">👩‍🏫 Consultora</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="memberBio">Biografía</label>
-          <textarea id="memberBio" name="memberBio" required placeholder="Describe la experiencia y rol del miembro del equipo..."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary">➕ Añadir al Equipo</button>
-      </form>
-    </div>
-  </section>
-
+  
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
@@ -564,21 +524,6 @@ footer {
       }
     });
 
-    // Funcionalidad para añadir miembros del equipo
-    document.getElementById('addMemberForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const name = document.getElementById('memberName').value;
-      const role = document.getElementById('memberRole').value;
-      const icon = document.getElementById('memberIcon').value;
-      const bio = document.getElementById('memberBio').value;
-      
-      // Crear nueva tarjeta de miembro
-      const teamGrid = document.getElementById('teamGrid');
-      const newCard = document.createElement('div');
-      newCard.className = 'team-card';
-      newCard.style.animation = 'fadeInUp 0.6s ease-out';
-      
       newCard.innerHTML = `
         <div class="team-photo">${icon}</div>
         <div class="team-info">
@@ -595,17 +540,6 @@ footer {
       
       teamGrid.appendChild(newCard);
       
-      // Limpiar formulario
-      this.reset();
-      
-      // Scroll suave hacia el nuevo miembro
-      setTimeout(() => {
-        newCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
-      
-      // Mostrar confirmación
-      alert('¡Miembro añadido exitosamente al equipo!');
-    });
 
     // Animación de entrada
     const style = document.createElement('style');
