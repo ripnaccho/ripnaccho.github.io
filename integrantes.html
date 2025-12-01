@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestro Equipo - Kinky Nasty</title>
+  <style>
+/* ===== Reset y Variables ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #fcbad3;
+  --secondary: #ffb6c1;
+  --accent: #f8c8dc;
+  --dark: #4a3f43;
+  --light: #fff5f8;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+header {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 2px 20px rgba(255,182,193,0.3);
+  position: fixed; top: 0; width: 100%;
+  z-index: 1000; transition: all 0.3s ease;
+}
+
+header.scrolled { padding: .5rem 0; box-shadow: 0 4px 25px rgba(255,182,193,0.4); }
+
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.5rem 5%; max-width: 1400px; margin: auto;
+}
+
+.logo {
+  display: flex; align-items: center; gap: .5rem;
+  font-size: 1.8rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  transition: transform .3s; cursor: pointer;
+}
+
+.logo:hover { transform: scale(1.05); }
+
+nav ul { list-style: none; display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; }
+
+nav a {
+  text-decoration: none; color: #775e67; font-weight: 600; position: relative;
+  transition: color .3s; padding: .5rem 0;
+}
+
+nav a::before {
+  content: ''; position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%); width: 0; height: 3px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  transition: width .3s; border-radius: 2px;
+}
+
+nav a:hover { color: var(--primary); }
+nav a:hover::before { width: 100%; }
+
+.cta-nav {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white !important; padding: .7rem 1.5rem !important;
+  border-radius: 50px; box-shadow: 0 4px 15px rgba(252,186,211,0.5);
+  transition: all .3s;
+}
+
+.cta-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(252,186,211,0.6);
+}
+
+.cta-nav::before { display: none; }
+
+/* ===== Hero Section ===== */
+.team-hero {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 10rem 5% 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  opacity: .3;
+}
+
+.team-hero-content {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.team-hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.team-hero p {
+  font-size: 1.3rem;
+  opacity: .95;
+}
+
+/* ===== Team Section ===== */
+.team-section {
+  padding: 6rem 5%;
+  background: var(--light);
+}
+
+.team-container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: #8d6f79;
+  line-height: 1.8;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.team-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(255,182,193,0.2);
+  border: 2px solid rgba(255,192,203,0.3);
+  transition: all .3s;
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(255,182,193,0.4);
+  border-color: var(--primary);
+}
+
+.team-photo {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.team-info {
+  padding: 2rem;
+}
+
+.team-info h3 {
+  font-size: 1.8rem;
+  color: var(--dark);
+  margin-bottom: .5rem;
+}
+
+.team-role {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.team-bio {
+  color: #8d6f79;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.team-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all .3s;
+  font-size: 1.2rem;
+}
+
+.social-link:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(252,186,211,0.5);
+}
+
+/* ===== Add Member Section ===== */
+.add-member-section {
+  background: white;
+  padding: 4rem 5%;
+}
+
+.add-member-container {
+  max-width: 600px;
+  margin: auto;
+  background: var(--light);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(255,182,193,0.2);
+  border: 2px solid rgba(255,192,203,0.3);
+}
+
+.add-member-container h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: var(--dark);
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid rgba(255,192,203,0.3);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all .3s;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(252,186,211,0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 1.1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all .3s;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 10px 30px rgba(255,192,203,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255,192,203,0.5);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 4rem 5% 2rem;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand p {
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+}
+
+.footer-links h4 {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: .8rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .team-hero h1 { font-size: 2.5rem; }
+  .team-hero p { font-size: 1.1rem; }
+  .section-header h2 { font-size: 2.2rem; }
+  .team-grid { grid-template-columns: 1fr; }
+  .add-member-container { padding: 2rem; }
+  nav ul { gap: 1.5rem; font-size: .9rem; }
+}
+
+@media (max-width: 480px) {
+  .team-hero h1 { font-size: 2rem; }
+  .section-header h2 { font-size: 1.8rem; }
+  .logo { font-size: 1.5rem; }
+  nav ul { gap: 1rem; }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">⚡ Kinky Nasty</div>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#team">Equipo</a></li>
+        <li><a href="#add-member">Añadir Miembro</a></li>
+        <li><a href="index.html#contact">Contacto</a></li>
+        <li><a href="index.html#pricing" class="cta-nav">Comprar Ahora</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="team-hero">
+    <div class="team-hero-content">
+      <h1>Nuestro Equipo</h1>
+      <p>Conoce a las personas extraordinarias que hacen posible la revolución en ventas automáticas</p>
+    </div>
+  </section>
+
+  <section id="team" class="team-section">
+    <div class="team-container">
+      <div class="section-header">
+        <h2>Los Expertos Detrás de la Innovación</h2>
+        <p>Un equipo apasionado y diverso comprometido con llevar tu negocio al siguiente nivel</p>
+      </div>
+      
+      <div class="team-grid" id="teamGrid">
+        <!-- Miembros de ejemplo -->
+        <div class="team-card">
+          <div class="team-photo">👨‍💼</div>
+          <div class="team-info">
+            <h3>Juan Pérez</h3>
+            <div class="team-role">CEO & Fundador</div>
+            <p class="team-bio">Visionario con más de 15 años de experiencia en tecnología y ventas automáticas. Lidera la estrategia y dirección de la compañía.</p>
+            <div class="team-social">
+              <a href="#" class="social-link">🔗</a>
+              <a href="#" class="social-link">📧</a>
+              <a href="#" class="social-link">🐦</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-photo">👩‍💻</div>
+          <div class="team-info">
+            <h3>María González</h3>
+            <div class="team-role">CTO</div>
+            <p class="team-bio">Experta en inteligencia artificial y automatización. Responsable de la innovación tecnológica de nuestras máquinas.</p>
+            <div class="team-social">
+              <a href="#" class="social-link">🔗</a>
+              <a href="#" class="social-link">📧</a>
+              <a href="#" class="social-link">🐦</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-photo">👨‍🔧</div>
+          <div class="team-info">
+            <h3>Carlos Rodríguez</h3>
+            <div class="team-role">Director de Operaciones</div>
+            <p class="team-bio">Especialista en logística y mantenimiento. Garantiza que cada máquina opere al máximo rendimiento.</p>
+            <div class="team-social">
+              <a href="#" class="social-link">🔗</a>
+              <a href="#" class="social-link">📧</a>
+              <a href="#" class="social-link">🐦</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="add-member" class="add-member-section">
+    <div class="add-member-container">
+      <h2>Añadir Nuevo Miembro</h2>
+      <form id="addMemberForm">
+        <div class="form-group">
+          <label for="memberName">Nombre Completo</label>
+          <input type="text" id="memberName" name="memberName" required placeholder="Ej: Juan Pérez">
+        </div>
+
+        <div class="form-group">
+          <label for="memberRole">Cargo</label>
+          <input type="text" id="memberRole" name="memberRole" required placeholder="Ej: Director de Ventas">
+        </div>
+
+        <div class="form-group">
+          <label for="memberIcon">Icono/Emoji</label>
+          <select id="memberIcon" name="memberIcon" required>
+            <option value="👨‍💼">👨‍💼 Ejecutivo</option>
+            <option value="👩‍💼">👩‍💼 Ejecutiva</option>
+            <option value="👨‍💻">👨‍💻 Desarrollador</option>
+            <option value="👩‍💻">👩‍💻 Desarrolladora</option>
+            <option value="👨‍🔧">👨‍🔧 Técnico</option>
+            <option value="👩‍🔧">👩‍🔧 Técnica</option>
+            <option value="👨‍🎨">👨‍🎨 Diseñador</option>
+            <option value="👩‍🎨">👩‍🎨 Diseñadora</option>
+            <option value="👨‍🏫">👨‍🏫 Consultor</option>
+            <option value="👩‍🏫">👩‍🏫 Consultora</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="memberBio">Biografía</label>
+          <textarea id="memberBio" name="memberBio" required placeholder="Describe la experiencia y rol del miembro del equipo..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">➕ Añadir al Equipo</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>⚡ Kinky Nasty</h3>
+        <p>Innovando en ventas automáticas con tecnología de punta para maximizar tus ingresos.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#features">Características</a></li>
+          <li><a href="index.html#pricing">Precios</a></li>
+          <li><a href="index.html#contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Soporte</h4>
+        <ul>
+          <li><a href="#">Centro de Ayuda</a></li>
+          <li><a href="#">Términos de Servicio</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Síguenos</h4>
+        <ul>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Kinky Nasty. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    // Scroll effect para el header
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Funcionalidad para añadir miembros del equipo
+    document.getElementById('addMemberForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('memberName').value;
+      const role = document.getElementById('memberRole').value;
+      const icon = document.getElementById('memberIcon').value;
+      const bio = document.getElementById('memberBio').value;
+      
+      // Crear nueva tarjeta de miembro
+      const teamGrid = document.getElementById('teamGrid');
+      const newCard = document.createElement('div');
+      newCard.className = 'team-card';
+      newCard.style.animation = 'fadeInUp 0.6s ease-out';
+      
+      newCard.innerHTML = `
+        <div class="team-photo">${icon}</div>
+        <div class="team-info">
+          <h3>${name}</h3>
+          <div class="team-role">${role}</div>
+          <p class="team-bio">${bio}</p>
+          <div class="team-social">
+            <a href="#" class="social-link">🔗</a>
+            <a href="#" class="social-link">📧</a>
+            <a href="#" class="social-link">🐦</a>
+          </div>
+        </div>
+      `;
+      
+      teamGrid.appendChild(newCard);
+      
+      // Limpiar formulario
+      this.reset();
+      
+      // Scroll suave hacia el nuevo miembro
+      setTimeout(() => {
+        newCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+      
+      // Mostrar confirmación
+      alert('¡Miembro añadido exitosamente al equipo!');
+    });
+
+    // Animación de entrada
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
