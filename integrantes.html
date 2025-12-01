@@ -184,11 +184,22 @@ nav a:hover::before { width: 100%; }
   overflow: hidden;
 }
 
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .team-photo::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);
+  z-index: 1;
 }
 
 .team-info {
@@ -237,94 +248,6 @@ nav a:hover::before { width: 100%; }
 .social-link:hover {
   transform: translateY(-3px) scale(1.1);
   box-shadow: 0 5px 15px rgba(252,186,211,0.5);
-}
-
-/* ===== Add Member Section ===== */
-.add-member-section {
-  background: white;
-  padding: 4rem 5%;
-}
-
-.add-member-container {
-  max-width: 600px;
-  margin: auto;
-  background: var(--light);
-  padding: 3rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(255,182,193,0.2);
-  border: 2px solid rgba(255,192,203,0.3);
-}
-
-.add-member-container h2 {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--dark);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  color: var(--dark);
-  font-weight: 600;
-  margin-bottom: .5rem;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%;
-  padding: 1rem;
-  border: 2px solid rgba(255,192,203,0.3);
-  border-radius: 10px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: all .3s;
-  background: white;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(252,186,211,0.2);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  padding: 1.1rem 2.5rem;
-  border: none;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.05rem;
-  transition: all .3s;
-  cursor: pointer;
-  text-decoration: none;
-  width: 100%;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  box-shadow: 0 10px 30px rgba(255,192,203,0.3);
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(255,192,203,0.5);
 }
 
 /* ===== Footer ===== */
@@ -389,7 +312,6 @@ footer {
   .team-hero p { font-size: 1.1rem; }
   .section-header h2 { font-size: 2.2rem; }
   .team-grid { grid-template-columns: 1fr; }
-  .add-member-container { padding: 2rem; }
   nav ul { gap: 1.5rem; font-size: .9rem; }
 }
 
@@ -429,25 +351,26 @@ footer {
       </div>
       
       <div class="team-grid" id="teamGrid">
-        <!-- Miembros de ejemplo -->
         <div class="team-card">
-                    <img src="lazo.jpg" alt="img programador">
-          <img src="lazo.jpg" alt="img programador">
+          <div class="team-photo">
+            <img src="lazo.jpg" alt="Lazo Thiago">
+          </div>
           <div class="team-info">
             <h3>Lazo Thiago</h3>
             <div class="team-role">Programador</div>
-            <p class="team-bio">Paseador profecional</p>
+            <p class="team-bio">Paseador profesional</p>
             <div class="team-social">
-              <a href="#" class="social-link">lazo.th🔗</a>
-              <a href="#" class="social-link">thiagolazojoaquin@gmai.com📧</a>
-              <a href="#" class="social-link">2345678🐦</a>
+              <a href="#" class="social-link">🔗</a>
+              <a href="#" class="social-link">📧</a>
+              <a href="#" class="social-link">🐦</a>
             </div>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo">👩‍💻</div>
-         <img src="palo.jpg" alt="img programador">
+          <div class="team-photo">
+            <img src="palo.jpg" alt="Paloma César">
+          </div>
           <div class="team-info">
             <h3>Paloma César</h3>
             <div class="team-role">CTO</div>
@@ -461,8 +384,9 @@ footer {
         </div>
 
         <div class="team-card">
-          <div class="team-photo">👨‍🔧</div>
-                  <img src="dana.jpg" alt="img programador">
+          <div class="team-photo">
+            <img src="dana.jpg" alt="Danna Aguilar">
+          </div>
           <div class="team-info">
             <h3>Danna Aguilar</h3>
             <div class="team-role">Director de Operaciones</div>
@@ -474,7 +398,8 @@ footer {
             </div>
           </div>
         </div>
-         <div class="team-card">
+
+        <div class="team-card">
           <div class="team-photo">👨‍💼</div>
           <div class="team-info">
             <h3>Juan Torres</h3>
@@ -489,12 +414,13 @@ footer {
         </div>
 
         <div class="team-card">
-          <div class="team-photo">👩‍💻</div>
-        <img src="tobi.jpg" alt="img programador">
+          <div class="team-photo">
+            <img src="tobi.jpg" alt="Tobias Baca">
+          </div>
           <div class="team-info">
-            <h3>Tobias baca</h3>
-        <div class="team-role">CTO</div>
-            <p class="team-bio">Experta en inteligencia artificial y automatización. Responsable de la innovación tecnológica de nuestras máquinas.</p>
+            <h3>Tobias Baca</h3>
+            <div class="team-role">Desarrollador</div>
+            <p class="team-bio">Experto en desarrollo de software y sistemas automatizados.</p>
             <div class="team-social">
               <a href="#" class="social-link">🔗</a>
               <a href="#" class="social-link">📧</a>
@@ -504,10 +430,11 @@ footer {
         </div>
 
         <div class="team-card">
-          <div class="team-photo">👨‍🔧</div>
-          <img src="martin.jpg" alt="img programador">
+          <div class="team-photo">
+            <img src="martin.jpg" alt="Martin Mingo">
+          </div>
           <div class="team-info">
-            <h3>Martin mingo </h3>
+            <h3>Martin Mingo</h3>
             <div class="team-role">Director de Operaciones</div>
             <p class="team-bio">Especialista en logística y mantenimiento. Garantiza que cada máquina opere al máximo rendimiento.</p>
             <div class="team-social">
@@ -517,11 +444,12 @@ footer {
             </div>
           </div>
         </div>
-         <div class="team-card">
+
+        <div class="team-card">
           <div class="team-photo">👨‍💼</div>
           <div class="team-info">
-            <h3>Gmez Alejo</h3>
-            <div class="team-role">QQuality Assurance</div>
+            <h3>Gómez Alejo</h3>
+            <div class="team-role">Quality Assurance</div>
             <p class="team-bio">Visionario con más de 18 años de experiencia en testeo de programas.</p>
             <div class="team-social">
               <a href="#" class="social-link">🔗</a>
@@ -532,12 +460,13 @@ footer {
         </div>
 
         <div class="team-card">
-          <div class="team-photo">👩‍💻</div>
-         <img src="meli.jpg" alt="img programador">
+          <div class="team-photo">
+            <img src="meli.jpg" alt="Melina Dettin">
+          </div>
           <div class="team-info">
             <h3>Melina Dettin</h3>
-            <div class="team-role">CTO</div>
-            <p class="team-bio">Experta en inteligencia artificial y automatización. Responsable de la innovación tecnológica de nuestras máquinas.</p>
+            <div class="team-role">Diseñadora UX/UI</div>
+            <p class="team-bio">Experta en experiencia de usuario y diseño de interfaces intuitivas.</p>
             <div class="team-social">
               <a href="#" class="social-link">🔗</a>
               <a href="#" class="social-link">📧</a>
@@ -547,9 +476,9 @@ footer {
         </div>
 
         <div class="team-card">
-         
-        <div class="team-photo">👨‍🔧</div>
-         <img src="tomi.jpg" alt="img programador">
+          <div class="team-photo">
+            <img src="tomi.jpg" alt="Tomas Martinez">
+          </div>
           <div class="team-info">
             <h3>Tomas Martinez</h3>
             <div class="team-role">Director de Operaciones</div>
@@ -559,10 +488,15 @@ footer {
               <a href="#" class="social-link">📧</a>
               <a href="#" class="social-link">🐦</a>
             </div>
-            <div class="team-photo">👨‍🔧</div>
-         <img src="nacho.jpg" alt="img programador">
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="nacho.jpg" alt="Ignacio Sagania">
+          </div>
           <div class="team-info">
-            <h3>ignacio sagania</h3>
+            <h3>Ignacio Sagania</h3>
             <div class="team-role">Director de Operaciones</div>
             <p class="team-bio">Especialista en logística y mantenimiento. Garantiza que cada máquina opere al máximo rendimiento.</p>
             <div class="team-social">
@@ -623,33 +557,6 @@ footer {
         header.classList.remove('scrolled');
       }
     });
-
-      newCard.innerHTML = `
-        <div class="team-photo">${icon}</div>
-        <div class="team-info">
-          <h3>${name}</h3>
-          <div class="team-role">${role}</div>
-          <p class="team-bio">${bio}</p>
-          <div class="team-social">
-            <a href="#" class="social-link">🔗</a>
-            <a href="#" class="social-link">📧</a>
-            <a href="#" class="social-link">🐦</a>
-          </div>
-        </div>
-      `;
-      
-      teamGrid.appendChild(newCard);
-      
-
-    // Animación de entrada
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-    `;
-    document.head.appendChild(style);
   </script>
 </body>
 </html>
